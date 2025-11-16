@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import lotus from '../../assets/lotus.png'
 import { NavLink } from 'react-router-dom'
-import App from '../../App';
+import { AddCartContext } from '../Context/AddCartContext';
+import { useContext } from "react";
+import { ShowCartContext } from '../Context/ShowCartContext';
 
-function Header({onSearch, addCartvalue}) {
+function Header({productImage, productName, price}) {
 
     // toggle Menu
     const [isToggledMenu, setIsToggledMenu] = useState(false);
@@ -11,22 +13,25 @@ function Header({onSearch, addCartvalue}) {
         setIsToggledMenu(!isToggledMenu)
     }
 
-    // Search Button
-    const [searchKeyword, setSearchKeyword] = useState('')
-    const [showSearchInput, setShowSearchInput] = useState(false)
 
-    const showSearchInputHandler = () => {
-        setShowSearchInput(!showSearchInput)
-    }
+    // show AddedCart count 
+    const { addedItemCount } = useContext(AddCartContext);
 
-    const searchHandler=()=>{
-        if(searchKeyword.trim()){
-            onSearch(searchKeyword)
-            setShowSearchInput(false)
-        }
-    }
-
-     console.log(addCartvalue);
+    //show cart
+    
+    // const { cartItems, setCartItems } = useContext(ShowCartContext);
+    // function showCartItemHandler() {
+    //     const newItem = { productImage, productName, price };
+    //     // Prevent duplicate entries (optional)
+    //     const isAlreadyInCart = cartItems.some(
+    //         (item) => item.productName === productName
+    //     );
+    //     if (!isAlreadyInCart) {
+    //         setCartItems([...cartItems, newItem]);
+    //     }
+    //     console.log("Cart Updated:", cartItems);
+    // }
+    
 
     return (
         <div className='w-full flex flex-wrap justify-between items-center p-3 shadow-md fixed z-15 top-6 bg-white'>
@@ -46,47 +51,31 @@ function Header({onSearch, addCartvalue}) {
             </div>
             <div className='space-x-5 text-xl flex items-center'>
 
-                <NavLink to='/signup'>
+                <div className='md:w-[20vw] md:h-[6vh] border-[1px] border-gray-400 rounded-xl flex bg-pink-50'>
+
+                    <i class="fa-solid fa-magnifying-glass cursor-pointer m-2"></i>
+                    <input className='w-[18vw] h-[5vh] outline-none text-[16px]' type="text" placeholder='Search for products' />
+                </div>
+                <NavLink to='/login'>
                     <button className='text-red-950 font-semibold cursor-pointer hover:text-red-900'>Login</button>
                 </NavLink>
                 <div className='relative'>
-                    <div className=''>
-                        <button className='text-red-900 font-bold text-[16px] absolute bottom-4 left-1 cursor-pointer'>{addCartvalue}</button>
-                    </div>
-                    <i class="fa-solid fa-cart-plus cursor-pointer"></i>
+
+                    {
+                       addedItemCount>=1?  <div className='w-[22px] h-[22px] rounded-full bg-red-700 absolute left-4 bottom-4 text-white text-center text-[15px]'>{addedItemCount}</div>:  <div></div>
+                    }
+
+                   <NavLink to="/cart">
+                        <i class="fa-solid fa-cart-plus cursor-pointer"></i>
+                   </NavLink>
                 </div>
 
-                {/* search */}
-                <i
-                    onClick={showSearchInputHandler}
-                    class="fa-solid fa-magnifying-glass cursor-pointer">
-                </i>
-
-                {
-                    showSearchInput &&
-                    (
-                        <>
-                            <input
-                                type="text"
-                                className='md:w-[180px] rounded-[2px] border border-gray-400 outline-none shadow-gray-400 shadow-lg'
-                                value={searchKeyword}
-                                onChange={(e) => setSearchKeyword(e.target.value)}
-                                onKeyDown={(e)=>{
-                                    if(e.key==='Enter'){
-                                        searchHandler();
-                                    }
-                                }}
-                                
-                            />
-                        </>
-                    )
-                }
-
-
+             
                 <div className='md:hidden text-center'>
                     <i
                         onClick={toggleHandlerMenu}
-                        class="fa-solid fa-bars cursor-pointer"></i>
+                        class="fa-solid fa-bars cursor-pointer">
+                    </i>
                 </div>
             </div>
 

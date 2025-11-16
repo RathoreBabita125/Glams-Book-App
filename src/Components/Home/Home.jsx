@@ -1,4 +1,3 @@
-import React from 'react'
 import lotus from '../../assets/lotus.png'
 import BodyImage_1 from '../../assets/BodyImage_1.jpg'
 import MakeupBrush from '../../assets/MakeupBrush.png'
@@ -13,13 +12,12 @@ import Product from './Product'
 function Home() {
 
     const [activeBox, setActiveBox] = useState(null);
-  
     const toggleBox = (boxName) => {
       setActiveBox(activeBox === boxName ? null : boxName);
     };
 
 
-
+    
   return (
     <div className='w-full'>
 
@@ -153,22 +151,26 @@ function Home() {
           <Product 
             productName="Face Toner"
             productImage="https://imgs.search.brave.com/5eqrAuFy8aW4UTL-ZZ31kw0OiZz2WC-RTfyKNJCBD3U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFVMzdFV1c2akwu/anBn"
-            price="20/75ml"
+            price="200"
+            Quantity="150ml"
           />
           <Product 
             productName="Night Cream"
             productImage="https://imgs.search.brave.com/IechnQWwXGCYDjy0KAPfKWhkwi6_TExmoY4t3ZLo3D8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFTNW9UbnVjMkwu/anBn"
-            price="30/50ml"
+            price="300"
+            Quantity="50ml"
           />
           <Product 
             productName="Makeup Base"
             productImage="https://imgs.search.brave.com/tZChc63eQ8MAcWramMFAMMmSSs_AsGaphZGXiYLGfek/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzY4ODQ2OS1NTEI4/MjI5MjgwOTc2Ml8w/MjIwMjUtRS1iYXNl/LWxpcXVpZGEtc3Vl/bGVuLW1ha2V1cC1i/LWJlYXV0eS1mb3Nj/by0zNS1tbC53ZWJw"
-            price="25/75ml"
+            price="250"
+            Quantity="20gm"
           />
           <Product 
             productName="Makeup Brush"
             productImage="https://imgs.search.brave.com/QPixC7-tEhNxM5Bpcq5CPRO3A4c3k5qSdou4dhH9B04/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxVStuWFNtLUJM/LmpwZw"
-            price="40"
+            price="200"
+            
           />
         </div>
 
@@ -176,22 +178,26 @@ function Home() {
           <Product 
             productName="Facewash"
             productImage="https://imgs.search.brave.com/23LdNGxIjf1sOJmWSZmsdGyIaX_yGUP548XeSbk4Mxk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFyOVJCbXZPRUwu/anBn"
-            price="120/175ml"
+            price="120"
+            Quantity="150ml"
           />
           <Product 
             productName="Face Powder"
             productImage="https://imgs.search.brave.com/bxA_dVaqnBuwd-Wb_J4r1elmchDeTTuCK3QWvKxN224/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTY5/NTI2MzYvcGhvdG8v/Ymx1c2gtbWFrZXVw/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1aUGRmS2tCZmZj/LVpmOGtVTDdaYWdC/WVBISk1veFFNZEdz/aWpZQWgzLThFPQ"
-            price="30/50gm"
+            price="180"
+            Quantity="50gm"
           />
           <Product 
             productName="Gel Polish"
             productImage="https://imgs.search.brave.com/HSsJ7eRezqO1mhXOt2XhK7hmWyEPDWqGgJbg5tBb-vg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Ymlvc2Vhd2VlZGdl/bC5jb20vY2RuL3No/b3AvcHJvZHVjdHMv/VXBncmFkZWRCYXNl/LTFHZWxQb2xpc2gu/anBnP3Y9MTY3MTU2/MDc4MCZ3aWR0aD0z/MDAw"
-            price="25/75ml"
+            price="275"
+            Quantity="100ml"
           />
           <Product 
             productName="Face Serum"
             productImage="https://imgs.search.brave.com/hcMZrDxALsYeZzsBnk1ciXLqxxR_a-5LTtMP482Z50A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9iY2pyMzB2/eGg2dGQvNDVuTzRO/ZmNsSGxkN2Y2cXVG/cXg5Ry84MzViYjZh/ZmY0YzMyZDQ1NmUy/ODlhNGU1Mzg0MTQ0/Yy82ODA2NjMxX0Nh/cm91c2VsXzE"
-            price="140/150ml"
+            price="460"
+            Quantity="150ml"
           />       
         </div>
 

@@ -1,5 +1,3 @@
-import React from 'react'
-
 
 function ItemBox({image, name, productImage}) {
     return (
