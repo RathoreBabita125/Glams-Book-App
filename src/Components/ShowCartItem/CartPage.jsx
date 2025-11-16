@@ -7,7 +7,7 @@ const CartPage = () => {
 
 
     const [quantities, setQuantities] = useState(
-        localStorage.setItem('addedCartItems', cartItems.map(() => 1))  
+        cartItems.map(() => 1)  
     );
 
 
